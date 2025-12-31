@@ -16,26 +16,231 @@
 @font-face {
     font-display: swap;
     font-family: 'Rubik';
-    src: url(./design/rubik-v31-latin/rubik-v31-latin-regular.woff2);
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-regular.woff2) format('woff2');
     font-weight: 400;
+    font-style: normal;
 }
 @font-face {
     font-display: swap;
     font-family: 'Rubik';
-    src: url(./design/rubik-v31-latin/rubik-v31-latin-300.woff2);
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-300.woff2) format('woff2');
     font-weight: 300;
+    font-style: normal;
 }
 @font-face {
     font-display: swap;
     font-family: 'Rubik';
-    src: url(./design/rubik-v31-latin/rubik-v31-latin-500.woff2);
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-500.woff2) format('woff2');
     font-weight: 500;
+    font-style: normal;
 }
 
+/* RESET */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
 body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  /* instead should I be making another body selector like this outside of my reset?  */
     background-color: var(--bg-color950);
     color: white;
+    font-family: var(--main-font);
+  
 }
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: 0.1rem solid transparent;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* Tile placement */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 5rem;
+}
+
+.header, .main {
+    width: clamp(20rem, 87vw, 30rem);
+    
+}
+
+.main {
+    display: grid;
+    gap: 2rem;
+}
+
+.tile {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* header features */
+
+.header__front-container {
+    position: relative;
+    z-index: 1;
+    background-color: var(--primary-bio);
+    padding: 2rem 0 2rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__img {
+    max-width: 4.5rem;
+    height: 4.5rem;
+    object-fit: contain;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+}
+
+.header__bio-report {
+    font-size: 1rem;
+}
+.header__bio-person {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.header__back-container {
+    position: relative;
+    z-index: 0;
+    height: 6rem;
+    margin-block-start: -2rem;
+    border-radius: 1rem;
+    background-color: var(--bg-color900);
+    align-content: end;
+}
+
+.header__time {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin-inline: auto;
+    padding-block-end: 1.2rem;
+    > button {
+        color: var(--neutral500)
+    }
+}
+
+/* creates the background display on the tiles */
+
+.tile__front-container {
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-color900);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.tile__activity {
+    font-size: 1.1rem;
+}
+.current__time {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.tile__back-container {
+    position: relative;
+    z-index: -1;
+    height: 4.5rem;
+    margin-block-end: -2rem;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: 90% -0.6rem;
+}
+
+.work > .tile__back-container {
+    background-color: var(--primary-work);
+    background-image: url(./images/icon-work.svg); 
+}
+.play > .tile__back-container {
+    background-color: var(--primary-play);
+    background-image: url(./images/icon-play.svg);
+}
+.study > .tile__back-container {
+    background-color: var(--primary-study);
+    background-image: url(./images/icon-study.svg);
+}
+.exercise > .tile__back-container {
+    background-color: var(--primary-exercise);
+    background-image: url(./images/icon-exercise.svg);
+}
+.social > .tile__back-container {
+    background-color: var(--primary-social);
+    background-image: url(./images/icon-social.svg);    
+}
+.self-care > .tile__back-container {
+    background-color: var(--primary-self-care);
+    background-image: url(./images/icon-self-care.svg);    
+}
+
+/* inner tile styling */
+
+.tile__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ellipsis-img {
+    object-fit: none;
+}
+
+.tile__times-daily, .tile__times-weekly, .tile__times-monthly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 
 .hidden {
     display: none;
