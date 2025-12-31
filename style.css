@@ -1,0 +1,42 @@
+:root {
+    --primary-bio: rgba(88, 71, 235, 1);
+    --primary-work: rgba(255, 140, 102, 1);
+    --primary-play: rgba(86, 194, 230, 1);
+    --primary-study: rgba(255, 92, 124, 1);
+    --primary-exercise: rgba(74, 207, 129, 1);
+    --primary-social: rgba(117, 54, 211, 1);
+    --primary-self-care: rgba(241, 198, 91, 1);
+    --bg-color950: rgba(15, 20, 36, 1);
+    --bg-color900: rgba(28, 31, 74, 1);
+    --neutral500: rgba(111, 118, 200, 1);
+    --neutral200: rgba(189, 193, 255, 1);
+    --main-font: 'Rubik', Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Rubik';
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Rubik';
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-300.woff2);
+    font-weight: 300;
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Rubik';
+    src: url(./design/rubik-v31-latin/rubik-v31-latin-500.woff2);
+    font-weight: 500;
+}
+
+body {
+    background-color: var(--bg-color950);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
