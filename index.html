@@ -31,7 +31,7 @@
       <div class="header__back-container">
         <nav class="header__time">
           <button type="button" id="daily-btn" class="header__time-daily">Daily</button>
-          <button type="button" id="weekly-btn" class="header__time-weekly">Weekly</button>
+          <button type="button" id="weekly-btn" class="header__time-weekly | selected">Weekly</button>
           <button type="button" id="monthly-btn" class="header__time-monthly">Monthly</button>
         </nav>
       </div>
@@ -46,18 +46,11 @@
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
           <div class="tile__times">
-            <div class="tile__times-daily hidden">
-              <h3 class="current__time">5hrs</h3> <!-- daily -->
-              <p class="previous__time">Previous - 7hrs</p> <!-- daily -->
+            <div class="tile__time">
+              <h3 id="current-time" class="current__time"></h3> <!-- daily -->
+              <p id="previous-time" class="previous__time">Previous - 7hrs</p> <!-- daily -->
             </div>
-            <div class="tile__times-weekly">
-              <h2 id="current-week-time" class="current__time">32hrs</h2> <!-- weekly -->
-              <p class="previous__time">Previous - 36hrs</p> <!-- weekly -->
-            </div>
-            <div class="tile__times-monthly hidden">
-              <h2 class="current__time">103hrs</h2> <!-- monthly -->
-              <p class="previous__time">Previous - 128hrs</p> <!-- monthly -->
-            </div>
+            
           </div>
         </div>
       </div>
@@ -69,17 +62,9 @@
             <h2 class="tile__activity">Play</h2>
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
-          <div class="tile__times-daily hidden">
-            <h3 class="current__time">1hr</h3> <!-- daily -->
-            <p class="previous__time">Previous - 2hrs</p><!-- daily -->
-          </div>
-          <div class="tile__times-weekly">
-            <h2 class="current__time">10hrs</h2> <!-- weekly -->
-            <p class="previous__time">Previous - 8hrs</p> <!-- weekly -->
-          </div>
-          <div class="tile__times-monthly hidden">
-            <h2 class="current__time">23hrs</h2> <!-- monthly -->
-            <p class="previous__time">Previous - 29hrs</p> <!-- monthly -->
+          <div class="tile__time">
+            <h3 id="current-time" class="current__time">1hr</h3> <!-- daily -->
+            <p id="previous-time" class="previous__time">Previous - 2hrs</p><!-- daily -->
           </div>
         </div>
       </div>
@@ -91,17 +76,9 @@
             <h2 class="tile__activity">Study</h2>
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
-          <div class="tile__times-daily hidden">
-            <h3 class="current__time">0hrs</h3> <!-- daily -->
-            <p class="previous__time">Previous - 1hr</p> <!-- daily -->
-          </div>
-          <div class="tile__times-weekly">
-            <h2 class="current__time">4hrs</h2> <!-- weekly -->
-            <p class="previous__time">Previous - 7hrs</p> <!-- weekly -->
-          </div>
-          <div class="tile__times-monthly hidden">
-            <h2 class="current__time">13hrs</h2> <!-- monthly -->
-            <p class="previous__time">Previous - 19hrs</p> <!-- monthly -->
+          <div class="tile__time">
+            <h3 id="current-time" class="current__time">0hrs</h3> <!-- daily -->
+            <p id="previous-time" class="previous__time">Previous - 1hr</p> <!-- daily -->
           </div>
         </div>
       </div>
@@ -113,17 +90,9 @@
             <h2 class="tile__activity">Exercise</h2>
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
-          <div class="tile__times-daily hidden">
-            <h3 class="current__time">1hr</h3> <!-- daily -->
-            <p class="previous__time">Previous - 1hr</p> <!-- daily -->
-          </div>
-          <div class="tile__times-weekly">
-            <h2 class="current__time">4hrs</h2> <!-- weekly -->
-            <p class="previous__time">Previous - 5hrs</p> <!-- weekly -->
-          </div>
-          <div class="tile__times-monthly hidden">
-            <h2 class="current__time">11hrs</h2> <!-- monthly -->
-            <p class="previous__time">Previous - 18hrs</p> <!-- monthly -->
+          <div class="tile__time">
+            <h3 id="current-time" class="current__time">1hr</h3> <!-- daily -->
+            <p id="previous-time" class="previous__time">Previous - 1hr</p> <!-- daily -->
           </div>
         </div>
       </div>
@@ -135,17 +104,9 @@
             <h2 class="tile__activity">Social</h2>
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
-          <div class="tile__times-daily hidden">
-            <h3 class="current__time">1hr</h3> <!-- daily -->
-            <p class="previous__time">Previous - 3hrs</p> <!-- daily -->
-          </div>
-          <div class="tile__times-weekly">
-            <h2 class="current__time">5hrs</h2> <!-- weekly -->
-            <p class="previous__time">Previous - 10hrs</p> <!-- weekly -->
-          </div>
-          <div class="tile__times-monthly hidden">
-            <h2 class="current__time">21hrs</h2> <!-- monthly -->
-            <p class="previous__time">Previous - 23hrs</p> <!-- monthly -->
+          <div class="tile__time">
+            <h3 id="current-time" class="current__time">1hr</h3> <!-- daily -->
+            <p id="previous-time" class="previous__time">Previous - 3hrs</p> <!-- daily -->
           </div>
         </div>
       </div>
@@ -157,17 +118,9 @@
             <h2 class="tile__activity">Self Care</h2>
             <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis-img">
           </div>
-          <div class="tile__times-daily hidden">
-            <h3 class="current__time">0hrs</h3> <!-- daily -->
-            <p class="previous__time">Previous - 1hr</p> <!-- daily -->
-          </div>
-          <div class="tile__times-weekly">
-            <h2 class="current__time">2hrs</h2> <!-- weekly -->
-            <p class="previous__time">Previous - 2hrs</p> <!-- weekly -->
-          </div>
-          <div class="tile__times-monthly hidden">
-            <h2 class="current__time">7hrs</h2> <!-- monthly -->
-            <p class="previous__time">Previous - 11hrs</p> <!-- monthly -->
+          <div class="tile__time">
+            <h3 id="current-time"class="current__time">0hrs</h3> <!-- daily -->
+            <p id="previous-time" class="previous__time">Previous - 1hr</p> <!-- daily -->
           </div>
         </div>
       </div>

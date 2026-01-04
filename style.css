@@ -233,7 +233,7 @@ ol {
     object-fit: none;
 }
 
-.tile__times-daily, .tile__times-weekly, .tile__times-monthly {
+.tile__time {
     display: flex;
     justify-content: space-between;
     align-items: center;
